@@ -1,0 +1,296 @@
+/* --- SEKCJA HERO --- */
+.hero {
+    display: flex;
+    align-items: center;       /* wyśrodkowanie pionowe */
+    justify-content: flex-end; /* zawartość po prawej stronie */
+    height: 100vh;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: right;
+    padding: 2rem 5rem;        /* trochę miejsca od prawej krawędzi */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    color:black;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    color:black;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.contact-button, .project-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button {
+    background-color: #8c5dc9;
+    color: white;
+    text-decoration: none;
+}
+
+
+.project-button {
+    background-color: #f3f3f3;
+    color: rgb(5, 0, 0);
+}
+
+.hero button:hover {
+    background-color: #6e5dce;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        justify-content: center; 
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        color: #A8E6CF;
+    }
+    .hero h2 {
+        font-size: 1.5rem;
+        color: #A8E6CF;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* Sekcja dedykacji */
+.dedykacja {
+    display: flex;
+    justify-content: center; /* centrowanie w pionie */
+    align-items: center;     /* centrowanie w poziomie */
+    height: 40vh;           /* cała wysokość ekranu */
+    background-color: #979797;
+    font-family: 'Georgia', serif;
+    color: #080808;
+    padding: 20px;
+}
+
+/* Lista - prostokąt */
+.letter-container {
+    width: 100%;
+    height: 250px; /* prostokąt */
+    max-width: 500px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Front i wnętrze listu */
+.letter-front, .letter-inside {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFF5E6;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.7s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E0D0C0;
+}
+
+/* Front listu */
+.letter-front {
+    z-index: 2;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Wnętrze listu */
+.letter-inside {
+    transform: rotateY(180deg);
+    font-size: 1em;
+    text-align: left;
+}
+
+/* Otwieranie listu */
+.letter-container.open .letter-front {
+    transform: rotateY(180deg);
+}
+
+.letter-container.open .letter-inside {
+    transform: rotateY(0deg);
+}
+
+/* Podpis w liście */
+.podpis {
+    font-style: italic;
+    margin-top: 10px;
+    color: #42284e;
+    font-size: 0.9em;
+}
+
+/* Pieczęć na froncie */
+.letter-front::after {
+    content: '✉️';
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+/* Responsywność dla telefonów */
+@media (max-width: 480px) {
+    .title2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .letter-container {
+        height: 200px;
+    }
+
+    .letter-front, .letter-inside {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+
+    .podpis {
+        font-size: 0.85em;
+    }
+}
+
+
+/* Responsywność dla małych ekranów */
+@media (max-width: 480px) {
+
+    .letter-container {
+        width: 90%;
+        aspect-ratio: 3 / 2;
+    }
+
+    .letter-front, .letter-inside {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+
+    .podpis {
+        font-size: 0.85em;
+    }
+}
+
+
+.video {
+    background-color: #979797;
+    padding: 20px 0;          /* trochę przestrzeni od góry i dołu */
+}
+
+.video h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.video p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 0%;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.video-gallery {
+    display: flex;
+    justify-content: center;  /* wyśrodkowanie wszystkich filmików */
+    flex-wrap: wrap;          /* przełamanie wiersza na małych ekranach */
+    gap: 20px;
+}
+
+.video-player-container {
+    width: 40vh;       /* szerokość pionowego telefonu */
+    height: 70vh;      /* wysokość pionowego telefonu */
+    background-color: #9c3b3b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Opcjonalne: niestandardowe style kontrolek w WebKit */
+.video-player::-webkit-media-controls-panel {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.video-player::-webkit-media-controls-play-button,
+.video-player::-webkit-media-controls-volume-slider {
+    filter: invert(1);
+}
+
+.footer {
+    background-color: #222; /* ciemne tło */
+    color: #fff;            /* biały tekst */
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ff6b6b; /* efekt przy najechaniu */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        font-size: 14px;
+    }
+    .social-links {
+        display: block;
+        margin-top: 10px;
+    }
+}
