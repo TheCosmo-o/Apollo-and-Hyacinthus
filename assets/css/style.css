@@ -244,7 +244,11 @@
     background-color: #979797;
     padding: 20px 0;          /* trochę przestrzeni od góry i dołu */
 }
-
+.game {
+    background-color: #862c2c;
+    padding: 20px 0;          /* trochę przestrzeni od góry i dołu */
+    text-align: center;
+}
 .video h1 {
     text-align: center;
     color: rgb(255, 255, 255);
